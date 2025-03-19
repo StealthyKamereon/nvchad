@@ -16,7 +16,7 @@ local on_attach = function(client, buffer_number)
   nvlsp.on_attach(client, buffer_number)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>a', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -38,7 +38,7 @@ local on_attach = function(client, buffer_number)
 end
 
 -- EXAMPLE
-local servers = { "html", "cssls", "lua_ls", "rust_analyzer" }
+local servers = { "html", "cssls", "lua_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

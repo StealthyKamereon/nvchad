@@ -22,12 +22,29 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-      },
-    },
+    config = function()
+      require("nvim-treesitter.configs").setup(
+        {
+          ensure_installed = {
+            "vim",
+            "lua",
+            "rust"
+          },
+          auto_install = true,
+          highlight = { enable = true },
+          indent = { enable = true },
+          swap = {
+            enable = true,
+            swap_next = {
+              ["<leader>sa"] = "@parameter.inner"
+            },
+            swap_previous = {
+              ["<leader>sA"] = "@parameter.inner"
+            }
+          }
+        }
+      )
+    end
   },
   {
     "smoka7/hop.nvim",
@@ -38,7 +55,27 @@ return {
     lazy = false,
   },
   { "chrisgrieser/nvim-spider", lazy = true },
-
+  -- Add path auto-completion
+  {
+    "hrsh7th/cmp-path",
+    config = function()
+      require('cmp').setup {
+        sources = {
+          { name = 'path' }
+        }
+      }
+    end
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    config = function()
+      require('cmp').setup {
+        sources = {
+          { name = 'nvim_lsp' }
+        }
+      }
+    end
+  }
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {

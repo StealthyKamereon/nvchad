@@ -16,6 +16,7 @@ map("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earc
 map("n", "<leader>sG", ":LiveGrepGitRoot<cr>", { desc = "[S]earch by [G]rep on Git Root" })
 map("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 map("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
+map("n", '<leader><leader>', require('telescope.builtin').buffers, {desc = 'Search opened buffers'})
 
 -- Spider (CamelCaseMotions) keymaps
 map({ "n", "o", "x" }, "<leader>w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
@@ -48,5 +49,19 @@ end, { remap = true })
 
 -- Nvimtree
 map("n", "<leader>tt", ":NvimTreeToggle<Enter>", { desc = "Toggle NvimTree" })
+
+-- Projects
+map("n", "<leader>ph", ":NeovimProjectHistory<Enter>", {desc = "Open projects history"})
+map("n", "<leader>pd", ":NeovimProjectDiscover<Enter>", {desc = "Discover projects"})
+
+-- Tabufline
+map("n", "gb", require("nvchad.tabufline").next, {desc = "Next buffer"})
+map("n", "gB", require("nvchad.tabufline").prev, {desc = "Previous buffer"})
+
+-- Disable some mappings
+local nomap = vim.keymap.del
+
+nomap("n", "<leader>wk")
+nomap("n", "<leader>wK")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
