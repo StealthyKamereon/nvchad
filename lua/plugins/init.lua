@@ -17,6 +17,7 @@ return {
     "williamboman/mason.nvim",
     enabled = false,
   },
+  -- Override autopairs to avoid it adding `(` when completing
   {
     'windwp/nvim-autopairs',
     config = function(_, opts)
