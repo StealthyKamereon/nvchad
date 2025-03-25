@@ -38,7 +38,7 @@ local on_attach = function(client, buffer_number)
 end
 
 -- EXAMPLE
-local servers = { "html", "cssls", "lua_ls" }
+local servers = { "html", "cssls", "lua_ls", "tinymist", "biome" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

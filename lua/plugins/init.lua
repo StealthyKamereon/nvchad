@@ -18,6 +18,12 @@ return {
     enabled = false,
   },
   {
+    'windwp/nvim-autopairs',
+    config = function(_, opts)
+      require("nvim-autopairs").setup(opts)
+    end
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -41,6 +47,26 @@ return {
             swap_previous = {
               ["<leader>sA"] = "@parameter.inner"
             }
+          },
+          filesystem_watchers = {
+            ignore_dirs = {
+              "node_modules",
+              "target"
+            }
+          },
+          log = {
+            enable = true,
+            truncate = true,
+            types = {
+            all = false,
+            config = false,
+            copy_paste = false,
+            dev = false,
+            diagnostics = true,
+            git = true,
+            profile = true,
+            watcher = true,
+  },
           }
         }
       )

@@ -9,3 +9,8 @@ opt.number = true
 opt.mouse = nil
 -- Restore default wrapping of move operation
 opt.whichwrap = "b,s"
+
+-- Tab related options
+opt.et = true
+opt.sta = true
+opt.sw = 4
