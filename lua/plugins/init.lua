@@ -25,6 +25,11 @@ return {
     end
   },
   {
+    "felpafel/inlay-hint.nvim",
+    event = "LspAttach",
+    config = true
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",

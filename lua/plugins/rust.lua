@@ -5,6 +5,7 @@ vim.g.rustaceanvim = {
       nvlsp.on_init(client, bufnr)
     end,
     on_attach = function(client, bufnr)
+      vim.lsp.inlay_hint.enable(true)
       nvlsp.on_attach(client, bufnr)
 
       vim.keymap.set("n", "<leader>a", function()
